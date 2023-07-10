@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:instaclone/screens/home_screen.dart';
+import 'package:instaclone/screens/sign_in_screen.dart';
+import 'package:instaclone/screens/sign_up_screen.dart';
 import 'package:instaclone/screens/splash_screen.dart';
 
 void main() {
@@ -10,8 +13,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home:  SplashScreen(),
+    return MaterialApp(
+      home:  const SplashScreen(),
+      routes: {
+        SignUpScreen.id:(context) => SignUpScreen(),
+        SignInScreen.id:(context) => SignInScreen(),
+        SplashScreen.id:(context) => SplashScreen(),
+        HomeScreen.id:(context) => HomeScreen(),
+      }
     );
   }
 }
